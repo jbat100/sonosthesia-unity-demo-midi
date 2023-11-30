@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Style/main.uss?fileID=7433441132597879392&amp;guid=1e7e44d633b7a4bf9ab6c7c9c10c0409&amp;type=3#main" />
+    <ui:GroupBox class="panel-background" style="align-items: stretch; height: 467px;">
+        <ui:GroupBox style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-grow: 1; flex-shrink: 1;">
+            <ui:GroupBox class="list-box" style="flex-grow: 1; flex-shrink: 1;">
+                <ui:ListView focusable="false" name="MessageList" selection-type="None" style="flex-direction: column-reverse; flex-grow: 1; padding-left: 16px; padding-right: 16px; padding-top: 16px; padding-bottom: 16px;" />
+            </ui:GroupBox>
+            <ui:GroupBox style="width: 116px; align-items: flex-start;">
+                <ui:GroupBox style="flex-direction: row; justify-content: center; align-items: center; flex-basis: auto; width: 100px;">
+                    <ui:Button text="Clear" display-tooltip-when-elided="true" name="ClearButton" enable-rich-text="false" class="action-button" style="flex-basis: 80px; height: 20px;" />
+                </ui:GroupBox>
+                <ui:GroupBox style="flex-direction: column; justify-content: flex-start; align-items: flex-start; flex-basis: auto;">
+                    <ui:Toggle label="Sync" name="SyncToggle" focusable="false" class="filter-toggle" style="transition-property: all; transition-duration: 0s; transition-timing-function: ease; transition-delay: 0s; justify-content: space-between; border-left-width: -4px; border-right-width: -4px; border-top-width: -4px; border-bottom-width: -4px; width: auto; flex-direction: row-reverse;" />
+                    <ui:Toggle label="Clock" name="ClockToggle" focusable="false" class="filter-toggle" />
+                    <ui:Toggle label="Channel" name="ChannelToggle" focusable="false" class="filter-toggle" />
+                </ui:GroupBox>
+            </ui:GroupBox>
+        </ui:GroupBox>
+    </ui:GroupBox>
+</ui:UXML>

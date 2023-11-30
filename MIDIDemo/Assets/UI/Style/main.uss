@@ -1,0 +1,188 @@
+.action-button {
+    flex-basis: 20px;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+    height: 30px;
+    -unity-font-style: bold;
+}
+
+.filter-toggle {
+    color: rgb(42, 255, 123);
+    flex-direction: row-reverse;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.unity-toggle {
+}
+
+.unity-toggle__label {
+    margin-left: 10px;
+    color: rgb(159, 159, 159);
+    -unity-font-style: bold;
+    -unity-text-align: upper-left;
+}
+
+.network-button {
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-left-color: rgba(0, 0, 0, 0.56);
+    border-right-color: rgba(0, 0, 0, 0.56);
+    border-top-color: rgba(0, 0, 0, 0.56);
+    border-bottom-color: rgba(0, 0, 0, 0.56);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-left-radius: 11px;
+    border-bottom-left-radius: 11px;
+    border-top-right-radius: 11px;
+    border-bottom-right-radius: 11px;
+}
+
+.panel-title {
+    -unity-text-align: upper-center;
+    -unity-font-style: bold;
+    color: rgb(200, 200, 200);
+    flex-grow: 1;
+    width: 180px;
+}
+
+.panel-background {
+    background-color: rgb(55, 55, 55);
+    border-left-color: rgba(7, 7, 7, 0);
+    border-right-color: rgba(7, 7, 7, 0);
+    border-top-color: rgba(7, 7, 7, 0);
+    border-bottom-color: rgba(7, 7, 7, 0);
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+}
+
+.short-toggle {
+    flex-direction: row-reverse;
+}
+
+.list-box {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(53, 52, 52, 0.57);
+    border-right-color: rgba(53, 52, 52, 0.57);
+    border-top-color: rgba(53, 52, 52, 0.57);
+    border-bottom-color: rgba(53, 52, 52, 0.57);
+    background-color: rgba(99, 99, 99, 0.28);
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+}
+
+.unity-integer-field {
+    flex-basis: 125px;
+    -unity-text-align: upper-right;
+    flex-direction: row-reverse;
+    width: 80px;
+    max-width: 150px;
+    min-width: 80px;
+    height: 30px;
+    justify-content: space-around;
+}
+
+.unity-integer-field__label {
+    -unity-text-align: middle-left;
+    width: 40px;
+    max-width: 80px;
+    min-width: 40px;
+    margin-right: 0;
+    margin-left: 9px;
+    flex-grow: 1;
+    flex-basis: auto;
+    color: rgb(229, 229, 229);
+}
+
+.unity-integer-field__input {
+    width: 50px;
+    max-width: 50px;
+    min-width: 40px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    -unity-text-align: middle-center;
+    margin-left: 0;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+    -unity-font-style: bold;
+}
+
+.send-box {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(55, 55, 55, 0.52);
+    border-right-color: rgba(55, 55, 55, 0.52);
+    border-top-color: rgba(55, 55, 55, 0.52);
+    border-bottom-color: rgba(55, 55, 55, 0.52);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    -unity-background-image-tint-color: rgb(99, 99, 99);
+    background-color: rgb(99, 99, 99);
+}
+
+.unity-float-field {
+    flex-basis: 125px;
+    -unity-text-align: upper-right;
+    flex-direction: row-reverse;
+    width: 80px;
+    max-width: 150px;
+    min-width: 80px;
+    height: 30px;
+    justify-content: space-around;
+}
+
+.unity-float-field__label {
+    -unity-text-align: middle-left;
+    width: 40px;
+    max-width: 80px;
+    min-width: 40px;
+    margin-right: 0;
+    margin-left: 9px;
+    flex-grow: 1;
+    flex-basis: auto;
+    color: rgb(229, 229, 229);
+}
+
+.unity-float-field__input {
+    width: 50px;
+    max-width: 50px;
+    min-width: 50px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    -unity-text-align: middle-center;
+    margin-left: 0;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+    -unity-font-style: bold;
+}
+
+.unity-list-view__empty-label {
+    display: none;
+}

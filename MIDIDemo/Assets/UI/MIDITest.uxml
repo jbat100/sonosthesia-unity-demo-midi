@@ -1,0 +1,51 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Style/main.uss?fileID=7433441132597879392&amp;guid=1e7e44d633b7a4bf9ab6c7c9c10c0409&amp;type=3#main" />
+    <ui:GroupBox class="panel-background">
+        <ui:GroupBox class="send-box" style="flex-direction: row; justify-content: flex-start; flex-shrink: 1; flex-grow: 1; align-items: center;">
+            <ui:Label tabindex="-1" text="Note On" display-tooltip-when-elided="true" class="panel-title" style="flex-grow: 0;" />
+            <ui:Button text="Send" display-tooltip-when-elided="true" name="NoteOnButton" class="action-button" style="flex-basis: 80px;" />
+            <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-basis: 30px; flex-shrink: 0;" />
+            <ui:IntegerField label="Channel" value="1" name="NoteOnChannel" />
+            <ui:IntegerField label="Pitch" value="42" name="NoteOnPitch" />
+            <ui:IntegerField label="Velocity" value="42" name="NoteOnVelocity" />
+        </ui:GroupBox>
+        <ui:GroupBox class="send-box" style="flex-direction: row; justify-content: flex-start; flex-shrink: 1; flex-grow: 1; align-items: center;">
+            <ui:Label tabindex="-1" text="Note Off" display-tooltip-when-elided="true" class="panel-title" style="flex-grow: 0;" />
+            <ui:Button text="Send" display-tooltip-when-elided="true" name="NoteOffButton" class="action-button" style="flex-basis: 80px;" />
+            <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-basis: 30px; flex-shrink: 0;" />
+            <ui:IntegerField label="Channel" value="1" name="NoteOffChannel" />
+            <ui:IntegerField label="Pitch" value="42" name="NoteOffPitch" />
+            <ui:IntegerField label="Velocity" value="42" name="NoteOffVelocity" />
+        </ui:GroupBox>
+        <ui:GroupBox class="send-box" style="flex-direction: row; justify-content: flex-start; flex-shrink: 1; flex-grow: 1; align-items: center;">
+            <ui:Label tabindex="-1" text="Control" display-tooltip-when-elided="true" class="panel-title" style="flex-grow: 0;" />
+            <ui:Button text="Send" display-tooltip-when-elided="true" name="ControlButton" class="action-button" style="flex-basis: 80px;" />
+            <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-basis: 30px; flex-shrink: 0;" />
+            <ui:IntegerField label="Channel" value="1" name="ControlChannel" />
+            <ui:IntegerField label="Number" value="42" name="ControlNumber" />
+            <ui:IntegerField label="Value" value="42" name="ControlValue" />
+        </ui:GroupBox>
+        <ui:GroupBox class="send-box" style="flex-direction: row; justify-content: flex-start; flex-shrink: 1; flex-grow: 1; align-items: center;">
+            <ui:Label tabindex="-1" text="Poly Aftertouch" display-tooltip-when-elided="true" class="panel-title" style="flex-grow: 0;" />
+            <ui:Button text="Send" display-tooltip-when-elided="true" name="PolyAftertouchButton" class="action-button" style="flex-basis: 80px;" />
+            <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-basis: 30px; flex-shrink: 0;" />
+            <ui:IntegerField label="Channel" value="1" name="PolyAftertouchChannel" />
+            <ui:IntegerField label="Pitch" value="42" name="PolyAftertouchPitch" />
+            <ui:IntegerField label="Value" value="42" name="PolyAftertouchValue" />
+        </ui:GroupBox>
+        <ui:GroupBox class="send-box" style="flex-direction: row; justify-content: flex-start; flex-shrink: 1; flex-grow: 1; align-items: center;">
+            <ui:Label tabindex="-1" text="Pitch Bend" display-tooltip-when-elided="true" class="panel-title" style="flex-grow: 0;" />
+            <ui:Button text="Send" display-tooltip-when-elided="true" name="PitchBendButton" class="action-button" style="flex-basis: 80px;" />
+            <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-basis: 30px; flex-shrink: 0;" />
+            <ui:IntegerField label="Channel" value="1" name="PitchBendChannel" />
+            <ui:FloatField label="Semi" value="42.2" name="PitchBendSemitones" />
+        </ui:GroupBox>
+        <ui:GroupBox class="send-box" style="flex-direction: row; justify-content: flex-start; flex-shrink: 1; flex-grow: 1; align-items: center;">
+            <ui:Label tabindex="-1" text="Channel Aftertouch" display-tooltip-when-elided="true" class="panel-title" style="flex-grow: 0;" />
+            <ui:Button text="Send" display-tooltip-when-elided="true" name="ChannelAftertouchButton" class="action-button" style="flex-basis: 80px;" />
+            <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-basis: 30px; flex-shrink: 0;" />
+            <ui:IntegerField label="Channel" value="1" name="ChannelAftertouchChannel" />
+            <ui:IntegerField label="Value" value="42" name="ChannelAftertouchValue" />
+        </ui:GroupBox>
+    </ui:GroupBox>
+</ui:UXML>
