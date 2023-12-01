@@ -96,6 +96,15 @@ namespace Sonosthesia.Demo
 
         private readonly CompositeDisposable _subscriptions = new();
 
+        protected virtual void OnValidate()
+        {
+            if (isActiveAndEnabled && Application.isPlaying)
+            {
+                ReloadSubscriptions();   
+            }
+            _dirty = true;
+        }
+        
         protected virtual void OnEnable()
         {
             VisualElement rootElement = _document.rootVisualElement;
@@ -122,7 +131,6 @@ namespace Sonosthesia.Demo
             
             _messageBuffer = new CircularBuffer<MIDIMessageUIData>(_messageCapacity);
             ReloadSubscriptions();
-
             _dirty = true;
         }
 
@@ -164,7 +172,7 @@ namespace Sonosthesia.Demo
 
             void Push(MIDIMessageUIData data)
             {
-                _messageBuffer.PushFront(data);
+                _messageBuffer?.PushFront(data);
                 _dirty = true;
             }
             
