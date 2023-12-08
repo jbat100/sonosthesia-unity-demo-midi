@@ -58,6 +58,10 @@ Listens to MIDI input port messages on the local machine.
 
 ![MIDIMonitor_short](https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/f959be4f-2c3c-45cd-9ad5-f1d8d4f6acd6)
 
+<p align="center">
+  <img src="https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/f959be4f-2c3c-45cd-9ad5-f1d8d4f6acd6" width="75%"/>
+</p>
+
 Sends messages to MIDI output port on the local machine. 
 
 ### TimelineMIDIInput
@@ -82,19 +86,26 @@ Connects to a running [sonosthesia-daw-connector](https://github.com/jbat100/son
 
 MIDI note on, note off and polyphonic aftertouch messages can be combined to create a sonosthesia channel with each note represented as a separate stream of [MIDINote](https://github.com/jbat100/sonosthesia-unity-packages/blob/main/packages/com.sonosthesia.adaptivemidi/Runtime/Messages/MIDINote.cs) with a variable `Pressure` field. 
 
-![MIDI1_short](https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/149eff13-db93-4d81-bd79-42ccb74c4289)
+<p align="center">
+  <img src="https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/149eff13-db93-4d81-bd79-42ccb74c4289" width="75%"/>
+</p>
 
 ### MPE Note Channels
 
 MIDI note on, note off, control change (74), channel aftertouch and pitch bend messages can be combined to create a sonosthesia channel with each MPE note represented as a stream of [MPENote](https://github.com/jbat100/sonosthesia-unity-packages/blob/main/packages/com.sonosthesia.adaptivemidi/Runtime/MPE/MPENote.cs) with variable `Slide`, `Pressure` and `Bend` fields. 
 
-![MPE1_short](https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/4d5e91b8-e695-48f9-8b14-a359827139df)
+<p align="center">
+  <img src="https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/4d5e91b8-e695-48f9-8b14-a359827139df" width="75%"/>
+</p>
+
 
 ## Sync and Transport
 
 MIDI clock, start, stop and continue messages can be used to synchronize Unity with a DAW. Bar, Beat and Sixteenth info is infered based on provided time signature. 
 
-![MIDITransport_short](https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/402aa1b2-4264-4a5a-9749-879fe2389ed7)
+<p align="center">
+  <img src="https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/402aa1b2-4264-4a5a-9749-879fe2389ed7" width="75%"/>
+</p>
 
 ### RtTransport
 
