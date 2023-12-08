@@ -6,6 +6,7 @@
     "com.sonosthesia.pack": "file:../../../sonosthesia-unity-packages/packages/com.sonosthesia.pack",
     "com.sonosthesia.signal": "file:../../../sonosthesia-unity-packages/packages/com.sonosthesia.signal",
     "com.sonosthesia.channel": "file:../../../sonosthesia-unity-packages/packages/com.sonosthesia.channel",
+    "com.sonosthesia.metronome": "file:../../../sonosthesia-unity-packages/packages/com.sonosthesia.metronome",
     "com.sonosthesia.midi": "file:../../../sonosthesia-unity-packages/packages/com.sonosthesia.midi",
     "com.sonosthesia.touch": "file:../../../sonosthesia-unity-packages/packages/com.sonosthesia.touch",
     "com.sonosthesia.spawn": "file:../../../sonosthesia-unity-packages/packages/com.sonosthesia.spawn",

@@ -78,6 +78,18 @@
         "com.sonosthesia.signal": "1.2.0"
       }
     },
+    "com.sonosthesia.metronome": {
+      "version": "file:../../../sonosthesia-unity-packages/packages/com.sonosthesia.metronome",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.neuecc.unirx": "7.1.0",
+        "com.sonosthesia.utils": "1.2.0",
+        "com.sonosthesia.adaptivemidi": "1.2.0",
+        "com.sonosthesia.signal": "1.2.0",
+        "com.sonosthesia.flow": "1.2.0"
+      }
+    },
     "com.sonosthesia.midi": {
       "version": "file:../../../sonosthesia-unity-packages/packages/com.sonosthesia.midi",
       "depth": 0,

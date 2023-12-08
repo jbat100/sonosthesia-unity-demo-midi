@@ -186,3 +186,12 @@
 .unity-list-view__empty-label {
     display: none;
 }
+
+.field-label {
+    color: rgb(185, 185, 185);
+    flex-basis: 80px;
+    -unity-text-align: upper-center;
+}
+
+.field-value {
+}

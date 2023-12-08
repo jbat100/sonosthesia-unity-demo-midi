@@ -1,81 +1,16 @@
-using System;
 using System.Linq;
 using Sonosthesia.AdaptiveMIDI;
-using Sonosthesia.AdaptiveMIDI.Messages;
+using Sonosthesia.UI;
 using Sonosthesia.Utils;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Sonosthesia.Demo
+namespace Sonosthesia.UI
 {
-    public readonly struct MIDIMessageUIData
-    {
-        public readonly int Count;
-        public readonly string Type;
-        public readonly string Data;
-        public readonly TimeSpan Timestamp;
-
-        public MIDIMessageUIData(int count, string type, string data, TimeSpan timestamp)
-        {
-            Count = count;
-            Type = type;
-            Data = data;
-            Timestamp = timestamp;
-        }
-    }
-    
-    static class MIDIMessageUIExtensions
-    {
-        private static MIDIMessageUIData FullDescription(string messageDescription)
-        {
-            return default;
-        }
-        
-        public static MIDIMessageUIData UIData(this MIDIClock clock, int count)
-        {
-            return new MIDIMessageUIData(count, "clock", $"<tick {clock.Count}>", clock.Timestamp);
-        }
-        
-        public static MIDIMessageUIData UIData(this MIDISync sync, int count)
-        {
-            return new MIDIMessageUIData(count, "sync", $"<{sync.Type}>", sync.Timestamp);
-        }
-        
-        public static MIDIMessageUIData UIData(this MIDISongPositionPointer pointer, int count)
-        {
-            return new MIDIMessageUIData(count, "position", $"<beats {pointer.Position}>", pointer.Timestamp);
-        }
-        
-        public static MIDIMessageUIData UIData(this MIDINote note, bool on, int count)
-        {
-            return new MIDIMessageUIData(count, $"note-{(on ? "on" : "off")}", $"<chan {note.Channel} pitch {note.Note} vel {note.Velocity}>", note.Timestamp);
-        }
-        
-        public static MIDIMessageUIData UIData(this MIDIPolyphonicAftertouch aftertouch, int count)
-        {
-            return new MIDIMessageUIData(count, "poly-aftertouch", $"<chan {aftertouch.Channel} pitch {aftertouch.Note} val {aftertouch.Value}>", aftertouch.Timestamp);
-        }
-        
-        public static MIDIMessageUIData UIData(this MIDIControl control, int count)
-        {
-            return new MIDIMessageUIData(count, "control", $"<chan {control.Channel} num {control.Number} val {control.Value}>", control.Timestamp);
-        }
-        
-        public static MIDIMessageUIData UIData(this MIDIChannelAftertouch aftertouch, int count)
-        {
-            return new MIDIMessageUIData(count, "chan-aftertouch", $"<chan {aftertouch.Channel} val {aftertouch.Value}>", aftertouch.Timestamp);
-        }
-        
-        public static MIDIMessageUIData UIData(this MIDIPitchBend bend, int count)
-        {
-            return new MIDIMessageUIData(count, "pitch-bend", $"<chan {bend.Channel} val {bend.Value}>", bend.Timestamp);
-        }
-    }
-    
     public class MIDIMonitorUI : MonoBehaviour
     {
-        [SerializeField] private MIDIMessageBroadcaster _broadcaster;
+        [SerializeField] private MIDIMessageNode _broadcaster;
         
         [SerializeField] private UIDocument _document;
 
@@ -92,7 +27,7 @@ namespace Sonosthesia.Demo
         private bool _dirty;
         private int _messageCount;
         private CircularBuffer<MIDIMessageUIData> _messageBuffer;
-        private MIDIMessageListContoller _listController;
+        private SimpleListController<MIDIMessageUIData, MIDIMessageListEntryController> _listController;
 
         private readonly CompositeDisposable _subscriptions = new();
 
@@ -109,10 +44,10 @@ namespace Sonosthesia.Demo
         {
             VisualElement rootElement = _document.rootVisualElement;
             
-            _listController = new MIDIMessageListContoller();
+            _listController = new SimpleListController<MIDIMessageUIData, MIDIMessageListEntryController>();
             ListView listView = rootElement.Q<ListView>("MessageList");
             _listController.InitializeList(listView, _listEntryTemplate);
-            _listController.Apply(Enumerable.Empty<MIDIMessageUIData>());
+            _listController.ImportData(Enumerable.Empty<MIDIMessageUIData>());
             
             void BindReloadToggle(VisualElement rootElement, string name, out Toggle toggle)
             {
@@ -125,6 +60,10 @@ namespace Sonosthesia.Demo
             BindReloadToggle(rootElement, "ClockToggle", out _clockToggle);
             BindReloadToggle(rootElement, "SyncToggle", out _syncToggle);
             BindReloadToggle(rootElement, "ChannelToggle", out _channelToggle);
+            
+            _clockToggle.value = true;
+            _syncToggle.value = true;
+            _channelToggle.value = true;
             
             _clearButton = rootElement.Q<Button>("ClearButton");
             _clearButton.clickable.clicked += OnClearButtonClicked;
@@ -155,7 +94,7 @@ namespace Sonosthesia.Demo
         {
             if (_dirty)
             {
-                _listController.Apply(_messageBuffer ?? Enumerable.Empty<MIDIMessageUIData>());
+                _listController.ImportData(_messageBuffer ?? Enumerable.Empty<MIDIMessageUIData>());
                 _dirty = false;
             }
         }
@@ -193,9 +132,9 @@ namespace Sonosthesia.Demo
             if (_channelToggle.value)
             {
                 _subscriptions.Add(_broadcaster.NoteOnObservable.Subscribe(m 
-                    => Push(m.UIData(true, _messageCount++))));
+                    => Push(m.UIData(_messageCount++))));
                 _subscriptions.Add(_broadcaster.NoteOffObservable.Subscribe(m 
-                    => Push(m.UIData(false, _messageCount++))));
+                    => Push(m.UIData(_messageCount++))));
                 _subscriptions.Add(_broadcaster.ControlObservable.Subscribe(m 
                     => Push(m.UIData(_messageCount++))));
                 _subscriptions.Add(_broadcaster.PolyphonicAftertouchObservable.Subscribe(m 
