@@ -50,13 +50,13 @@ UI test and monitoring tools which plug into the abstraction layer API are provi
 
 ### RtMIDIInput
 
-![MIDIKeys_short](https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/0ba0138f-77af-492f-9f02-ee240a0dcec3)
+<p align="center">
+  <img src="https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/0ba0138f-77af-492f-9f02-ee240a0dcec3" width="75%"/>
+</p>
 
 Listens to MIDI input port messages on the local machine.
 
 ### RtMIDIOutput
-
-![MIDIMonitor_short](https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/f959be4f-2c3c-45cd-9ad5-f1d8d4f6acd6)
 
 <p align="center">
   <img src="https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/f959be4f-2c3c-45cd-9ad5-f1d8d4f6acd6" width="75%"/>
