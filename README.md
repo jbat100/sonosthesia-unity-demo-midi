@@ -50,9 +50,13 @@ UI test and monitoring tools which plug into the abstraction layer API are provi
 
 ### RtMIDIInput
 
+![MIDIKeys_short](https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/0ba0138f-77af-492f-9f02-ee240a0dcec3)
+
 Listens to MIDI input port messages on the local machine.
 
 ### RtMIDIOutput
+
+![MIDIMonitor_short](https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/f959be4f-2c3c-45cd-9ad5-f1d8d4f6acd6)
 
 Sends messages to MIDI output port on the local machine. 
 
@@ -78,13 +82,19 @@ Connects to a running [sonosthesia-daw-connector](https://github.com/jbat100/son
 
 MIDI note on, note off and polyphonic aftertouch messages can be combined to create a sonosthesia channel with each note represented as a separate stream of [MIDINote](https://github.com/jbat100/sonosthesia-unity-packages/blob/main/packages/com.sonosthesia.adaptivemidi/Runtime/Messages/MIDINote.cs) with a variable `Pressure` field. 
 
+![MIDI1_short](https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/149eff13-db93-4d81-bd79-42ccb74c4289)
+
 ### MPE Note Channels
 
 MIDI note on, note off, control change (74), channel aftertouch and pitch bend messages can be combined to create a sonosthesia channel with each MPE note represented as a stream of [MPENote](https://github.com/jbat100/sonosthesia-unity-packages/blob/main/packages/com.sonosthesia.adaptivemidi/Runtime/MPE/MPENote.cs) with variable `Slide`, `Pressure` and `Bend` fields. 
 
+![MPE1_short](https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/4d5e91b8-e695-48f9-8b14-a359827139df)
+
 ## Sync and Transport
 
 MIDI clock, start, stop and continue messages can be used to synchronize Unity with a DAW. Bar, Beat and Sixteenth info is infered based on provided time signature. 
+
+![MIDITransport_short](https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/402aa1b2-4264-4a5a-9749-879fe2389ed7)
 
 ### RtTransport
 
