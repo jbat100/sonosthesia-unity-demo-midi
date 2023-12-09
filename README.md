@@ -1,6 +1,6 @@
 # sonosthesia-unity-demo-midi
 
-This Unity application demonstrates the sonosthesia MIDI modules. These modules aim to provide an abstraction layer for MIDI messages, with a human readable API for MIDI input and output. The core message types and abstract input and output APIs are provided by
+This Unity application demonstrates the sonosthesia MIDI packages, which are part of a wider set of [packages](https://github.com/jbat100/sonosthesia-unity-packages) aimed at facilitating the creation of immersive, interactive audio visual art. These modules provide an abstraction layer for MIDI messages, with a human readable API for MIDI input and output. The core message types and abstract input and output APIs are provided by
 
 - [com.sonosthesia.adaptivemidi](https://github.com/jbat100/sonosthesia-unity-packages/tree/main/packages/com.sonosthesia.adaptivemidi)
 
@@ -12,7 +12,7 @@ While concrete implementations are provided by
 
 # Installation
 
-Note that to add those packages to your Unity project you will need to add the following scoped registeries to your `Packages/package.json` file (`Keijiro` only necessary for [com.sonosthesia.rtmidi](https://github.com/jbat100/sonosthesia-unity-packages/tree/main/packages/com.sonosthesia.rtmidi))
+Note that to add those packages to your Unity project you will need to add the following [scoped registeries](https://docs.unity3d.com/Manual/upm-scoped.html) to your `Packages/package.json` file (`Keijiro` only necessary for [com.sonosthesia.rtmidi](https://github.com/jbat100/sonosthesia-unity-packages/tree/main/packages/com.sonosthesia.rtmidi)). Note this can 
 
 
 ```
@@ -44,43 +44,37 @@ Note that to add those packages to your Unity project you will need to add the f
 
 # Scenes
 
-UI test and monitoring tools which plug into the abstraction layer API are provided by 
+UI test and monitoring tools which plug into the abstraction layer API are contained in the [Assets folder](https://github.com/jbat100/sonosthesia-unity-demo-midi/tree/main/MIDIDemo/Assets/UI) of the application itself.
 
 ## MIDI I/O Scenes
 
-### RtMIDIInput
+### RtMIDIInput and RtMIDIOutput
+
+Platform support is limited to Windows, macOS and Linux due to the dependency on [jp.keijiro.rtmidi](https://github.com/keijiro/jp.keijiro.rtmidi)
 
 <p align="center">
   <img src="https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/0ba0138f-77af-492f-9f02-ee240a0dcec3" width="75%"/>
 </p>
 
-Listens to MIDI input port messages on the local machine.
-
-### RtMIDIOutput
+Listen to MIDI input port messages on the local machine using the `RtMIDIInput` component from [com.sonosthesia.rtmidi](https://github.com/jbat100/sonosthesia-unity-packages/tree/main/packages/com.sonosthesia.rtmidi).
 
 <p align="center">
   <img src="https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/f959be4f-2c3c-45cd-9ad5-f1d8d4f6acd6" width="75%"/>
 </p>
 
-Sends messages to MIDI output port on the local machine. 
+Send messages to MIDI output port on the local machine using the `RtMIDIOutput` from [com.sonosthesia.rtmidi](https://github.com/jbat100/sonosthesia-unity-packages/tree/main/packages/com.sonosthesia.rtmidi). 
 
-### TimelineMIDIInput
+### TimelineMIDIInput and MergedTimelineMIDIInput
 
-Generates MIDI messages from a midi file track using the Unity timeline.
+Supports all platforms. Generate MIDI messages from midi file tracks using the Unity timeline. Uses the `TimelineMIDIOutput` Implemented in [com.sonosthesia.timelinemidi](https://github.com/jbat100/sonosthesia-unity-packages/tree/main/packages/com.sonosthesia.timelinemidi).
 
-### MergedTimelineMIDIInput
+### PackRawMIDIInput and PackRawMIDIOutput
 
-Generates MIDI messages from multiple midi file tracks using the Unity timeline.
-
-### PackRawMIDIInput
-
-Connects to a running [sonosthesia-daw-connector](https://github.com/jbat100/sonosthesia-live-connect/tree/main/sonosthesia-daw-connector) to receive MIDI messages from a remote machine. 
-
-### PackRawMIDIOutput
-
-Connects to a running [sonosthesia-daw-connector](https://github.com/jbat100/sonosthesia-live-connect/tree/main/sonosthesia-daw-connector) to send MIDI messages to a remote machine.
+Supports all platforms. Connect to a running [sonosthesia-daw-connector](https://github.com/jbat100/sonosthesia-live-connect/tree/main/sonosthesia-daw-connector) to send and receive MIDI messages from a remote machine. 
 
 ## Channels
+
+Channels provide a higher level of abstraction to MDI notes and MPE notes by combining different types of messages to create UniRx data streams for each note. They are implemented in the [com.sonosthesia.midi](https://github.com/jbat100/sonosthesia-unity-packages/tree/main/packages/com.sonosthesia.midi) package.
 
 ### MIDI Note Channels
 
@@ -101,15 +95,17 @@ MIDI note on, note off, control change (74), channel aftertouch and pitch bend m
 
 ## Sync and Transport
 
-MIDI clock, start, stop and continue messages can be used to synchronize Unity with a DAW. Bar, Beat and Sixteenth info is infered based on provided time signature. 
+MIDI [Song Position Pointer](http://midi.teragonaudio.com/tech/midispec/ssp.htm), [Clock](http://midi.teragonaudio.com/tech/midispec/clock.htm), [Start](http://midi.teragonaudio.com/tech/midispec/start.htm), [Stop](http://midi.teragonaudio.com/tech/midispec/stop.htm) and [Continue](http://midi.teragonaudio.com/tech/midispec/continue.htm) messages can be used to synchronize Unity with a DAW. Bar, Beat and Sixteenth info is infered based on provided time signature. 
 
 <p align="center">
   <img src="https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/402aa1b2-4264-4a5a-9749-879fe2389ed7" width="75%"/>
 </p>
 
-### RtTransport
+Note the MIDI Sync functionality must be enabled in your DAW for the relevant MIDI output. In Ableton Live the [song](https://help.ableton.com/hc/en-us/articles/209071149-Synchronizing-Live-via-MIDI) MIDI clock type must be used. If unsure of the required settings of your particular DAW you can use applications like [MIDIMonitor](https://www.snoize.com/midimonitor/) to check that it is generating the required sync messages.
 
-### PackTransport
+### RtTransport and PackTransport
+
+Provide example transport tracking with two different MIDI backends.
 
 ### Known limitations
 
