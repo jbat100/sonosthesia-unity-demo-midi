@@ -70,7 +70,11 @@ Supports all platforms. Generate MIDI messages from midi file tracks using the U
 
 ### PackRawMIDIInput and PackRawMIDIOutput
 
-Supports all platforms. Connect to a running [sonosthesia-daw-connector](https://github.com/jbat100/sonosthesia-live-connect/tree/main/sonosthesia-daw-connector) to send and receive MIDI messages from a remote machine. 
+Supports all platforms. Connect to a running [sonosthesia-daw-connector](https://github.com/jbat100/sonosthesia-live-connect/tree/main/sonosthesia-daw-connector) to send and receive MIDI messages from a remote machine (including mobile and VR platforms). Follow setup and config instructions and ensure that the installed version matches the [com.sonosthesia.pack](https://github.com/jbat100/sonosthesia-unity-packages/tree/main/packages/com.sonosthesia.pack) package version in your unity project. You can ensure a specific version of the sonosthesia-daw-connector using `@` 
+
+```
+npm install -g sonosthesia-daw-connector@1.3.0
+```
 
 ## Channels
 
