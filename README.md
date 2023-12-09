@@ -53,16 +53,24 @@ UI test and monitoring tools which plug into the abstraction layer API are conta
 Platform support is limited to Windows, macOS and Linux due to the dependency on [jp.keijiro.rtmidi](https://github.com/keijiro/jp.keijiro.rtmidi)
 
 <p align="center">
+    <img width="445" alt="RtMIDIInput" src="https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/fe3b33a8-b1a4-46bd-9506-e459ab1ea969" width="50%">
+</p>
+
+<p align="center">
   <img src="https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/0ba0138f-77af-492f-9f02-ee240a0dcec3" width="75%"/>
 </p>
 
-Listen to MIDI input port messages on the local machine using the `RtMIDIInput` component from [com.sonosthesia.rtmidi](https://github.com/jbat100/sonosthesia-unity-packages/tree/main/packages/com.sonosthesia.rtmidi).
+Listen to MIDI input port messages on the local machine using the `RtMIDIInputStream` component from [com.sonosthesia.rtmidi](https://github.com/jbat100/sonosthesia-unity-packages/tree/main/packages/com.sonosthesia.rtmidi).
 
 <p align="center">
   <img src="https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/f959be4f-2c3c-45cd-9ad5-f1d8d4f6acd6" width="75%"/>
 </p>
 
-Send messages to MIDI output port on the local machine using the `RtMIDIOutput` from [com.sonosthesia.rtmidi](https://github.com/jbat100/sonosthesia-unity-packages/tree/main/packages/com.sonosthesia.rtmidi). 
+<p align="center">
+    <img width="445" alt="RTMIDIOutput" src="https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/a9289488-6ad0-4d91-bb33-d8e8ca17ce2e" width="50%">
+</p>
+
+Send messages to MIDI output port on the local machine using the `RtMIDIOutputStream` from [com.sonosthesia.rtmidi](https://github.com/jbat100/sonosthesia-unity-packages/tree/main/packages/com.sonosthesia.rtmidi). 
 
 ### TimelineMIDIInput and MergedTimelineMIDIInput
 
@@ -75,6 +83,10 @@ Supports all platforms. Connect to a running [sonosthesia-daw-connector](https:/
 ```
 npm install -g sonosthesia-daw-connector@1.3.0
 ```
+<p align="center">
+    <img width="445" alt="PackMIDIInput" src="https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/6e4d35a2-bc82-40c0-9538-2fcb5a027ac0" width="50%">
+    <img width="443" alt="PackMIDIOutput" src="https://github.com/jbat100/sonosthesia-unity-demo-midi/assets/1318918/011f3a7e-0cdb-428e-9b5e-42c755582150" width="50%">
+</p>
 
 ## Channels
 
