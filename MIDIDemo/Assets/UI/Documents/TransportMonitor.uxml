@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Styles/sonosthesia-main.uss?fileID=7433441132597879392&amp;guid=1e7e44d633b7a4bf9ab6c7c9c10c0409&amp;type=3#sonosthesia-main" />
+    <ui:GroupBox class="panel-background" style="flex-direction: row;">
+        <ui:Label tabindex="-1" text="Transport" display-tooltip-when-elided="true" class="field-label" />
+        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="BarLabel" class="field-value" style="flex-basis: 60px; -unity-text-align: upper-center; color: rgb(255, 255, 255); -unity-font-style: bold;" />
+        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="BeatLabel" class="field-value" style="flex-basis: 60px; -unity-text-align: upper-center; color: rgb(255, 255, 255); -unity-font-style: bold;" />
+        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SixteenthLabel" class="field-value" style="flex-basis: 60px; -unity-text-align: upper-center; color: rgb(255, 255, 255); -unity-font-style: bold;" />
+    </ui:GroupBox>
+</ui:UXML>

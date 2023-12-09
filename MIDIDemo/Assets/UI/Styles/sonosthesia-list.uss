@@ -1,0 +1,39 @@
+.list-label {
+    color: rgb(221, 221, 221);
+    -unity-text-align: middle-center;
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+
+.list-label-even {
+    background-color: rgba(89, 88, 88, 0.72);
+}
+
+.list-label-odd {
+    background-color: rgb(75, 75, 75);
+}
+
+.list-item {
+    height: 26px;
+    -unity-text-align: middle-left;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgb(159, 159, 159);
+    border-right-color: rgb(159, 159, 159);
+    border-top-color: rgb(159, 159, 159);
+    border-bottom-color: rgb(159, 159, 159);
+    align-items: center;
+    flex-direction: row;
+    flex-grow: 0;
+    max-height: 26px;
+}

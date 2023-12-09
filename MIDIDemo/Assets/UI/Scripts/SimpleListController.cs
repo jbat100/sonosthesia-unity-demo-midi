@@ -2,10 +2,34 @@ using System.Collections.Generic;
 using UnityEngine.Assertions;
 using UnityEngine.UIElements;
 
-namespace Sonosthesia.Demo
+namespace Sonosthesia.UI
 {
-    public class MIDIMessageListContoller
+
+    public interface ISimpleListEntryController<TEntryData> where TEntryData : struct
     {
+        void SetVisualElement(VisualElement visualElement);
+
+        void SetData(TEntryData? data);
+    }
+    
+    // just data display, no selection or other interaction
+    
+    public class SimpleListController<TEntryData, TEntryController> 
+        where TEntryData : struct
+        where TEntryController : class, ISimpleListEntryController<TEntryData>, new()
+    {
+        public SimpleListController()
+        {
+            _fixedItemHeight = 27;
+        }
+
+        public SimpleListController(float fixedItemHeight)
+        {
+            _fixedItemHeight = fixedItemHeight;
+        }
+
+        private float _fixedItemHeight;
+        
         // UXML template for list entries
         private VisualTreeAsset _listEntryTemplate;
 
@@ -21,12 +45,12 @@ namespace Sonosthesia.Demo
             Setup();
         }
 
-        private readonly List<MIDIMessageUIData> _midiMessageData = new ();
+        private readonly List<TEntryData> _data = new ();
 
-        public void Apply(IEnumerable<MIDIMessageUIData> data)
+        public void ImportData(IEnumerable<TEntryData> data)
         {
-            _midiMessageData.Clear();
-            _midiMessageData.AddRange(data);
+            _data.Clear();
+            _data.AddRange(data);
             _messageListView.RefreshItems();
         }
 
@@ -39,7 +63,7 @@ namespace Sonosthesia.Demo
                 TemplateContainer newListEntry = _listEntryTemplate.Instantiate();
 
                 // Instantiate a controller for the data
-                MIDIMessageListEntryController newListEntryLogic = new MIDIMessageListEntryController();
+                TEntryController newListEntryLogic = new TEntryController();
 
                 // Assign the controller script to the visual element
                 newListEntry.userData = newListEntryLogic;
@@ -54,16 +78,14 @@ namespace Sonosthesia.Demo
             // Set up bind function for a specific list entry
             _messageListView.bindItem = (item, index) =>
             {
-                (item.userData as MIDIMessageListEntryController).SetData(_midiMessageData[index]);
+                (item.userData as TEntryController).SetData(_data[index]);
             };
 
             // Set a fixed item height
-            _messageListView.fixedItemHeight = 27;
+            _messageListView.fixedItemHeight = _fixedItemHeight;
 
             // Set the actual item's source list/array
-            _messageListView.itemsSource = _midiMessageData;
+            _messageListView.itemsSource = _data;
         }
-    }    
+    }
 }
-
-

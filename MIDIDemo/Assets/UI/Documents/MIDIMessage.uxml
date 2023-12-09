@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Packages/com.sonosthesia.ui/Style/sonosthesia-list.uss?fileID=7433441132597879392&amp;guid=0f43059e2ae0e4ed4962393ef91b4100&amp;type=3#sonosthesia-list" />
+    <ui:GroupBox class="message-label list-item" style="flex-direction: row; background-color: rgba(0, 0, 0, 0.27); align-items: center; height: auto;">
+        <ui:Label tabindex="-1" text="0000" display-tooltip-when-elided="true" name="CountLabel" class="list-label-even list-label" style="width: 74px; flex-basis: 60px;" />
+        <ui:Label tabindex="-1" text="Position" display-tooltip-when-elided="true" name="TypeLabel" class="list-label-odd list-label" style="width: 98px; flex-basis: 100px;" />
+        <ui:Label tabindex="-1" text="c 12 p 123 v 127" display-tooltip-when-elided="true" name="DataLabel" class="list-label-even list-label" style="width: 147px; flex-shrink: 1; flex-grow: 1; flex-direction: column;" />
+        <ui:Label tabindex="-1" text="3000.00" display-tooltip-when-elided="true" name="TimestampLabel" class="list-label-odd list-label" style="width: 147px; flex-shrink: 0; flex-grow: 0; flex-direction: column; flex-basis: 80px;" />
+    </ui:GroupBox>
+</ui:UXML>
