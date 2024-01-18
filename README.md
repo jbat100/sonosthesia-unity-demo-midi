@@ -12,7 +12,7 @@ While concrete implementations are provided by
 
 # Installation
 
-Note that to add those packages to your Unity project you will need to add the following [scoped registeries](https://docs.unity3d.com/Manual/upm-scoped.html) to your `Packages/package.json` file (`Keijiro` only necessary for [com.sonosthesia.rtmidi](https://github.com/jbat100/sonosthesia-unity-packages/tree/main/packages/com.sonosthesia.rtmidi)). Note this can 
+Note that to add those packages to your Unity project you will need to add the following [scoped registeries](https://docs.unity3d.com/Manual/upm-scoped.html) to your `Packages/package.json` file (`Keijiro` only necessary for [com.sonosthesia.rtmidi](https://github.com/jbat100/sonosthesia-unity-packages/tree/main/packages/com.sonosthesia.rtmidi)). 
 
 
 ```
@@ -81,7 +81,7 @@ Supports all platforms. Generate MIDI messages from midi file tracks using the U
 Supports all platforms. Connect to a running [sonosthesia-daw-connector](https://www.npmjs.com/package/sonosthesia-daw-connector) to send and receive MIDI messages from a remote machine (including mobile and VR platforms). Follow setup and config instructions and ensure that the installed major/minor version matches the [com.sonosthesia.pack](https://github.com/jbat100/sonosthesia-unity-packages/tree/main/packages/com.sonosthesia.pack) package version in your unity project. You can ensure a specific major/minor version of the sonosthesia-daw-connector using `@` without specifying patch version (the latest patch release will be installed)
 
 ```
-npm install -g sonosthesia-daw-connector@1.3
+npm install -g sonosthesia-daw-connector@1.3.0
 ```
 
 MIDI input uses the `PackRawMIDIInputStream`
